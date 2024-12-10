@@ -43,8 +43,8 @@ class TicTacToe:
             if " " in r:
                 return False #Not all the cells are filled, so it returns false.
         if self.check_winner is None: #Runs only if all cells are filled.
-            return True               #All cells are filled and there is a winner.
-        return False                  #All cells are filled and there isn't a winner.
+            return True               #All cells are filled and there isn't a winner.
+        return False                  #All cells are filled and there is a winner.
     def setup_players(self):
         # Allows the players to choose their symbol
         print("Welcome to Tic-Tac-Toe!")
