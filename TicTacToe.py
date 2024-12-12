@@ -42,9 +42,7 @@ class TicTacToe:
         for r in self.board:
             if " " in r:
                 return False #Not all the cells are filled, so it returns false.
-        if self.check_winner is None: #Runs only if all cells are filled.
-            return True               #All cells are filled and there isn't a winner.
-        return False                  #All cells are filled and there is a winner.
+        return self.check_winner() is None 
     def setup_players(self):
         # Allows the players to choose their symbol
         print("Welcome to Tic-Tac-Toe!")
@@ -80,8 +78,8 @@ class TicTacToe:
 
             if self.playerMove(r, c): #Uses the input values of r and c 
                 self.boardPrint()
-
                 winner = self.check_winner() #Assigns the value from the method to winner.
+
                 if winner:
                     print(f"Congratulations {self.players[winner]}! You win!")
                     break
